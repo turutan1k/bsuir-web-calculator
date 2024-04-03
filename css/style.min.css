@@ -1,111 +1,152 @@
+body,
+html {
+    min-height: 100vh;
+}
+#output,
+body,
 html,
-body {
-    font-family: "Raleway", sans-serif;
+section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+}
+#expression,
+#result,
+.btn {
+    color: #fff;
+}
+.blue,
+.blue:focus,
+.light,
+.light:focus {
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+body,
+html {
+    font-family: Raleway, sans-serif;
     font-size: 62.5%;
     font-weight: 400;
     color: #231f20;
-    min-height: 100vh;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
-
 *,
-*::before,
-*::after {
+::after,
+::before {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
-
-ul[class],
-ol[class] {
+ol[class],
+ul[class] {
     padding: 0;
+    list-style: none;
 }
-
+blockquote,
 body,
+dd,
+dl,
+figcaption,
+figure,
 h1,
 h2,
 h3,
 h4,
-p,
-ul[class],
-ol[class],
 li,
-figure,
-figcaption,
-blockquote,
-dl,
-dd {
+ol[class],
+p,
+ul[class] {
     margin: 0;
 }
-
 body {
-    min-height: 100vh;
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
 }
-
-ul[class],
-ol[class] {
-    list-style: none;
-}
-
 a:not([class]) {
+    -webkit-text-decoration-skip: ink;
     text-decoration-skip-ink: auto;
 }
-
 img {
     max-width: 100%;
     display: block;
 }
-
 article > * + * {
     margin-top: 1em;
 }
-
-input,
 button,
-textarea,
-select {
+input,
+select,
+textarea {
     font: inherit;
 }
-
 @media (prefers-reduced-motion: reduce) {
     * {
-        animation-duration: 0.01ms !important;
+        -webkit-animation-duration: 0s !important;
+        animation-duration: 0s !important;
+        -webkit-animation-iteration-count: 1 !important;
         animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+        -webkit-transition-duration: 0s !important;
+        -o-transition-duration: 0s !important;
+        transition-duration: 0s !important;
         scroll-behavior: auto !important;
     }
 }
-
 section {
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
     flex: 1;
     font-size: 4rem;
     font-weight: 300;
 }
-
+#output,
+.left {
+    -ms-flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+}
 #output {
     width: 100%;
     display: flex;
     flex-direction: column;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
     justify-content: flex-end;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
     align-items: flex-end;
     height: 12rem;
     border-bottom: 0.1rem solid #2e2f38;
+}
+#input,
+.left,
+.top {
+    display: -webkit-box;
+    display: -ms-flexbox;
 }
 #input {
     width: 100%;
     display: flex;
     gap: 1rem;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    padding-top: 2rem;
 }
 .top {
     gap: 1rem;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
     justify-content: flex-start;
 }
 .left {
@@ -113,76 +154,88 @@ section {
     display: flex;
     gap: 1rem;
     flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: start;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
     justify-content: start;
+}
+.numbers,
+.right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    gap: 1rem;
 }
 .right {
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
-    gap: 1rem;
 }
 .numbers {
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    gap: 1rem;
 }
-#expression,
-#result {
-    color: #fff;
-}
-#input {
-    padding-top: 2rem;
+.btn,
+.global-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
 }
 .btn {
     width: 11.2rem;
-    height: 7.5rem;
     font-size: 3.2rem;
     height: 7.2rem;
     border: 0;
     border-radius: 2rem;
     cursor: pointer;
-    color: white;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
 }
-
 .light,
 .light:focus {
-    transition: all 0.3s;
+    transition: 0.3s;
     background-color: #4e505f;
 }
-
 .light:hover {
     background-color: #8890a5;
 }
-
 .blue,
 .blue:focus {
-    transition: all 0.3s;
+    transition: 0.3s;
     background-color: #4b5efc;
 }
-
-.blue:hover {
-    transition: all 0.3s;
-    background-color: #798bf9;
-}
-
+.blue:hover,
 .dark,
 .dark:focus {
-    transition: all 0.3s;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.blue:hover {
+    transition: 0.3s;
+    background-color: #798bf9;
+}
+.dark,
+.dark:focus {
+    transition: 0.3s;
     background-color: #2e2f38;
 }
-
 .dark:hover {
-    transition: all 0.3s;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
     background-color: #505266;
 }
 .global-container {
     width: 100%;
     height: 100vh;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -197,141 +250,141 @@ section {
 }
 .container {
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     width: 141rem;
     height: 100%;
 }
-
 .calculator-container {
     max-width: 100rem;
     background: #1d1e25;
     border-radius: 4rem;
     padding: 3rem;
 }
-
 @media (max-width: 1530px) {
-    html,
-    body {
+    body,
+    html {
         font-size: 57.5%;
     }
 }
 @media (max-width: 1400px) {
-    html,
-    body {
+    body,
+    html {
         font-size: 52.5%;
     }
 }
 @media (max-width: 1280px) {
-    html,
-    body {
+    body,
+    html {
         font-size: 47.5%;
     }
 }
 @media (max-width: 1160px) {
-    html,
-    body {
+    body,
+    html {
         font-size: 42.5%;
     }
 }
 @media (max-width: 1040px) {
-    html,
-    body {
+    body,
+    html {
         font-size: 37.5%;
     }
 }
 @media (max-width: 930px) {
-    html,
-    body {
+    body,
+    html {
         font-size: 32.5%;
     }
 }
 @media (max-width: 790px) {
-    html,
-    body {
+    body,
+    html {
         font-size: 30.5%;
     }
 }
 @media (max-width: 768px) {
-    html,
-    body {
+    body,
+    html {
         font-size: 62.5%;
     }
-}
-@media (max-width: 760px) {
-    html,
-    body {
-        font-size: 57.5%;
-    }
-}
-@media (max-width: 700px) {
-    html,
-    body {
-        font-size: 52.5%;
-    }
-}
-@media (max-width: 645px) {
-    html,
-    body {
-        font-size: 47.5%;
-    }
-}
-@media (max-width: 580px) {
-    html,
-    body {
-        font-size: 42.5%;
-    }
-}
-@media (max-width: 525px) {
-    html,
-    body {
-        font-size: 37.5%;
-    }
-}
-@media (max-width: 480px) {
-    html,
-    body {
-        font-size: 87.5%;
-    }
-}
-@media (max-width: 460px) {
-    html,
-    body {
-        font-size: 82.5%;
-    }
-}
-@media (max-width: 440px) {
-    html,
-    body {
-        font-size: 77.5%;
-    }
-}
-@media (max-width: 400px) {
-    html,
-    body {
-        font-size: 72.5%;
-    }
-}
-@media (max-width: 370px) {
-    html,
-    body {
-        font-size: 67.5%;
-    }
-}
-@media (max-width: 340px) {
-    html,
-    body {
-        font-size: 62.5%;
-    }
-}
-
-@media (max-width: 768px) {
     .container {
         width: 66.8rem;
     }
 }
-
+@media (max-width: 760px) {
+    body,
+    html {
+        font-size: 57.5%;
+    }
+}
+@media (max-width: 700px) {
+    body,
+    html {
+        font-size: 52.5%;
+    }
+}
+@media (max-width: 645px) {
+    body,
+    html {
+        font-size: 47.5%;
+    }
+}
+@media (max-width: 580px) {
+    body,
+    html {
+        font-size: 42.5%;
+    }
+}
+@media (max-width: 525px) {
+    body,
+    html {
+        font-size: 37.5%;
+    }
+}
+@media (max-width: 480px) {
+    body,
+    html {
+        font-size: 87.5%;
+    }
+}
+@media (max-width: 460px) {
+    body,
+    html {
+        font-size: 82.5%;
+    }
+}
+@media (max-width: 440px) {
+    body,
+    html {
+        font-size: 77.5%;
+    }
+}
+@media (max-width: 400px) {
+    body,
+    html {
+        font-size: 72.5%;
+    }
+}
+@media (max-width: 370px) {
+    body,
+    html {
+        font-size: 67.5%;
+    }
+}
+@media (max-width: 340px) {
+    body,
+    html {
+        font-size: 62.5%;
+    }
+}
 @media (max-width: 480px) {
     .container {
         width: 29rem;
